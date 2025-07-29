@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:xii_rpl_1/main_layout.dart';
+import 'package:xii_rpl_1/stack_widget/stack_dua.dart';
+import 'package:xii_rpl_1/stack_widget/stack_satu.dart';
+import 'package:xii_rpl_1/stack_widget/stack_tiga.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,7 +13,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: HelloFlutter());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: StackTiga());
   }
 }
 
