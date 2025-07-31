@@ -10,7 +10,7 @@ class MainLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true, // biar bisa pakai transparansi
+      extendBodyBehindAppBar: true,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
         child: AppBar(
@@ -25,17 +25,16 @@ class MainLayout extends StatelessWidget {
               fontSize: 20,
             ),
           ),
-          leading: IconButton(
-            icon: const Icon(
-              Icons.arrow_back_ios_new_rounded,
-              color: Colors.black87,
-            ),
-            onPressed: () {},
-          ),
+          leading: Navigator.canPop(context)
+              ? IconButton(
+                  icon: const Icon(Icons.arrow_back, color: Colors.black87),
+                  onPressed: () => Navigator.pop(context),
+                )
+              : null,
           actions: [
             IconButton(
               icon: const Icon(
-                Icons.shopping_cart_outlined,
+                Icons.notifications_outlined,
                 color: Colors.black87,
               ),
               onPressed: () {},
@@ -43,12 +42,7 @@ class MainLayout extends StatelessWidget {
           ],
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(
-          top: 60,
-        ), // beri ruang untuk AppBar transparan
-        child: body,
-      ),
+      body: Container(child: body),
       backgroundColor: const Color(0xFFF9F9F9),
     );
   }

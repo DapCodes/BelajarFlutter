@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xii_rpl_1/main_layout.dart';
-import 'package:xii_rpl_1/row_and_column_widget/column_satu.dart';
-import 'package:xii_rpl_1/row_and_column_widget/latihan_rowcol_dua.dart';
-import 'package:xii_rpl_1/row_and_column_widget/latihan_rowcol_satu.dart';
-import 'package:xii_rpl_1/row_and_column_widget/row_satu.dart';
-import 'package:xii_rpl_1/tugas/tugas_day_1.dart';
+import 'tugas/tugas_day_2/grid.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +11,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: TugasDaySatu());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Event Organizer',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: EventCategoriesPage(),
+    );
   }
 }
 
